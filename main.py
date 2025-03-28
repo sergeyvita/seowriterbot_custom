@@ -12,8 +12,14 @@ client = OpenAI(api_key=api_key)
 def generate():
     try:
         data = request.get_json()
-        custom_input = data.get("custom_input", "").strip()
+        custom_input = data.get("custom_input", "")
+        chunks = data.get("chunks", [])
 
+        if not custom_input and chunks:
+            custom_input = "\n".join([chunk.strip() for chunk in chunks if isinstance(chunk, str)])
+
+        custom_input = custom_input.strip()
+        
         if not custom_input:
             return jsonify({"error": "Нет текста для генерации"}), 400
 
