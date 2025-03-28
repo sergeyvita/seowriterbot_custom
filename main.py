@@ -81,15 +81,36 @@ def generate():
             match = re.search(rf"==={tag}===\s*(.+?)(?=(?:===|$))", content, re.DOTALL)
             return match.group(1).strip() if match else ""
 
-        result = {
-            "element_name": extract_block("ELEMENT_NAME"),
-            "meta_title": extract_block("META_TITLE"),
-            "meta_keywords": extract_block("META_KEYWORDS"),
-            "meta_description": extract_block("META_DESCRIPTION"),
-            "article": extract_block("ARTICLE")
-        }
+        # Извлекаем данные из ответа
+        element_name = extract_block("ELEMENT_NAME")
+        meta_title = extract_block("META_TITLE")
+        meta_keywords = extract_block("META_KEYWORDS")
+        meta_description = extract_block("META_DESCRIPTION")
+        article_text = extract_block("ARTICLE")
 
-        return jsonify(result)
+        # 🔥 Генерация картинки по заголовку
+        image_prompt = f"Иллюстрация к статье: {element_name}. Современная, позитивная, в стиле рекламы новостроек."
+        image_url = None
+        try:
+            image_response = client.images.generate(
+                model="dall-e-3",
+                prompt=image_prompt,
+                n=1,
+                size="1024x1024"
+            )
+            image_url = image_response.data[0].url
+        except Exception as e:
+            print("Ошибка генерации изображения:", e)
+
+        # Возвращаем всё вместе
+        return jsonify({
+            "element_name": element_name,
+            "meta_title": meta_title,
+            "meta_keywords": meta_keywords,
+            "meta_description": meta_description,
+            "article": article_text,
+            "image_url": image_url
+        })
 
     except Exception as e:
         return jsonify({"error": str(e)}), 500
