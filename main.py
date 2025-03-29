@@ -91,7 +91,7 @@ def generate():
         # 🔥 Генерация картинки по заголовку
         image_prompt = (
             f"Create a photo-realistic image inspired by the following real estate article:\n"
-            f"{article_summary}\n"
+            f"{article_text}\n"
             f"The image should look like a modern real estate advertisement: clean, attractive, realistic, "
             f"shot with a DSLR, sunny weather, modern buildings, depth of field, vibrant colors. "
             f"Include elements related to residential complexes or family lifestyle."
