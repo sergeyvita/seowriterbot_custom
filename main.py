@@ -89,14 +89,22 @@ def generate():
         article_text = extract_block("ARTICLE")
 
         # 🔥 Генерация картинки по заголовку
-        image_prompt = f"Иллюстрация к статье: {element_name}. Современная, позитивная, в стиле рекламы новостроек."
+        image_prompt = (
+            f"Create a photo-realistic image inspired by the following real estate article:\n"
+            f"{article_summary}\n"
+            f"The image should look like a modern real estate advertisement: clean, attractive, realistic, "
+            f"shot with a DSLR, sunny weather, modern buildings, depth of field, vibrant colors. "
+            f"Include elements related to residential complexes or family lifestyle."
+        )    
         image_url = None
         try:
             image_response = client.images.generate(
                 model="dall-e-3",
                 prompt=image_prompt,
                 n=1,
-                size="1024x1024"
+                size="1024x1024",
+                quality="hd",
+                style="photographic"
             )
             image_url = image_response.data[0].url
         except Exception as e:
