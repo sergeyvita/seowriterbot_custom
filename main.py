@@ -115,7 +115,7 @@ def generate():
                 n=1,
                 size="1792x1024",
                 quality="hd",
-                style="photographic"
+                style="natural"
             )
             image_url = image_response.data[0].url
         except Exception as e:
