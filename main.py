@@ -90,13 +90,22 @@ def generate():
 
         # 🔥 Генерация картинки по заголовку
         image_prompt = (
-            f"Create a photo-realistic image inspired by the following real estate article:\n"
-            f"{article_text[:500]}\n"
-            f"The image should look like a modern real estate advertisement: clean, attractive, realistic, "
-            f"shot with a DSLR, sunny weather, modern buildings, depth of field, vibrant colors. "
-            f"Include elements related to residential complexes or family lifestyle."
+            f"A magical, atmospheric illustration in the style of Disney animated films, "
+            f"inspired by the meaning and content of the following article about real estate in Russia:\n\n"
+            f"{article_text[:500]}\n\n"
+            f"The illustration should metaphorically and visually convey the core idea of the article — "
+            f"whether it's about buying a home, financial analytics, commercial real estate, urban development, "
+            f"investments, or economic trends.\n\n"
+            f"The composition may include, depending on the article's theme, cities, neighborhoods, and characters "
+            f"interacting with the environment: families, experts, builders, dreamers, or buyers. "
+            f"The color palette should be warm and inspiring. It's important to preserve the spirit of hope, dreams, "
+            f"and the future — as in classic Disney works — while keeping the illustration modern and thematically "
+            f"tied to real estate, without being a direct copy of photos or architectural plans.\n\n"
+            f"The visual style should be expressive, soft, and detail-oriented. Characters should appear kind and sincere, "
+            f"and scenes should be metaphorical. The illustration must be created based on the content of the article above."
         )    
-        image_url = None
+
+            image_url = None
         try:
             image_response = client.images.generate(
                 model="dall-e-3",
@@ -104,7 +113,7 @@ def generate():
                 n=1,
                 size="1792x1024",
                 quality="hd",
-                style="photographic"
+                style="natural""
             )
             image_url = image_response.data[0].url
         except Exception as e:
