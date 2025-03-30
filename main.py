@@ -105,7 +105,7 @@ def generate():
             f"and scenes should be metaphorical. The illustration must be created based on the content of the article above."
         )    
 
-            image_url = None
+        image_url = None
         try:
             image_response = client.images.generate(
                 model="dall-e-3",
