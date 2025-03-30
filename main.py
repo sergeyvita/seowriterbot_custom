@@ -99,7 +99,7 @@ def generate():
         )
             # 🔥 Генерация картинки по статье
         image_prompt = (
-            f"f"A clean, photo-realistic image inspired by a real estate article in Russia."
+            f"A clean, photo-realistic image inspired by a real estate article in Russia."
             f"The image should show a warm, modern residential area in a Russian city — with new apartment buildings, trees, and families outside. "
             f"A peaceful, sunny day. Children playing, couples walking, and families enjoying time together in a courtyard. "
             f"The scene should feel safe, optimistic, and modern, like a real estate advertisement for urban living. "
