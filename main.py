@@ -90,22 +90,12 @@ def generate():
 
         # 🔥 Генерация картинки по заголовку
         image_prompt = (
-            f"A magical, atmospheric illustration in the exact style of Disney animated concept art, "
-            f"inspired by the meaning and content of the following article about real estate in Russia:\n\n"
-            f"{article_text[:500]}\n\n"
-            f"The illustration should metaphorically and visually convey the core idea of the article — "
-            f"whether it's about buying a home, financial analytics, commercial real estate, urban development, "
-            f"investments, or economic trends.\n\n"
-            f"The composition may include, depending on the article's theme, cities, neighborhoods, and characters "
-            f"interacting with the environment: families, experts, builders, dreamers, or buyers. "
-            f"The color palette should be warm, golden, and inspiring. Magical lighting is encouraged. "
-            f"The visual style should be expressive, painterly, soft, and highly detailed, "
-            f"like scenes from Disney movies such as Tangled, Encanto, or Frozen.\n\n"
-            f"The characters should have light skin tones and soft European facial features, "
-            f"resembling the classical characters from Disney fairy tales. Faces should appear friendly, open, "
-            f"and kind — evoking a sense of trust, joy, and emotional connection.\n\n"
-            f"The illustration must not resemble a photo or render, but should feel like a warm, storybook painting "
-            f"that emotionally resonates with the viewer."
+            f"A photo-realistic, high-quality image inspired by the following article about real estate in Russia:"
+            f"{article_text[:500]}"
+            f"The image should visually reflect the key idea of the article — whether it’s about buying a home, choosing a residential complex, family lifestyle, investment, or urban living."
+            f"The scene should include realistic people with Slavic/European features — typical Russian families or professionals — in a modern residential environment. Include happy children, young families, or couples enjoying a peaceful moment in a sunny courtyard, near a new apartment building or playground. The setting should reflect a clean, safe, and comfortable urban space, typical for modern Russian cities like Krasnodar, Nizhny Novgorod, or Novorossiysk."
+            f"Focus on warm natural light (sunset or early morning), realistic colors, and a lifestyle-oriented atmosphere. The composition should feel like a professional advertising photo — suitable for a real estate brochure, billboard, or landing page. The tone must be optimistic, aspirational, and trustworthy."
+            
         )    
 
         image_url = None
