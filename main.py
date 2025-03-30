@@ -88,14 +88,24 @@ def generate():
         meta_description = extract_block("META_DESCRIPTION")
         article_text = extract_block("ARTICLE")
 
-        # 🔥 Генерация картинки по заголовку
-        image_prompt = (
-            f"A photo-realistic, high-quality image inspired by the following article about real estate in Russia:"
-            f"{article_text[:500]}"
-            f"The image should visually reflect the key idea of the article — whether it’s about buying a home, choosing a residential complex, family lifestyle, investment, or urban living."
-            f"The scene should include realistic people with Slavic/European features — typical Russian families or professionals — in a modern residential environment. Include happy children, young families, or couples enjoying a peaceful moment in a sunny courtyard, near a new apartment building or playground. The setting should reflect a clean, safe, and comfortable urban space, typical for modern Russian cities like Krasnodar, Nizhny Novgorod, or Novorossiysk."
-            f"Focus on warm natural light (sunset or early morning), realistic colors, and a lifestyle-oriented atmosphere. The composition should feel like a professional advertising photo — suitable for a real estate brochure, billboard, or landing page. The tone must be optimistic, aspirational, and trustworthy."
+            # Удаляем кавычки у ЖК и прочие нестабильные элементы
+        cleaned_article_text = re.sub(r"[«»\"“”]", "", article_text)
             
+            # Краткое смысловое описание (в будущем можно заменить автосаммари)
+        article_summary = (
+            "This article helps readers choose the best residential complex in Russia based on lifestyle, budget, "
+            "and preferences — from cozy family options to premium urban living. "
+            "It explains which type of housing fits different goals: comfort, investment, location, or seaside life."
+        )
+            # 🔥 Генерация картинки по статье
+        image_prompt = (
+            f"A photo-realistic, high-quality image inspired by the following real estate article in Russia:\n\n"
+            f"{article_summary}\n\n"
+            f"The image should metaphorically reflect the key idea — such as choosing between comfort, status, nature, or sea view. "
+            f"Depict modern Russian families in realistic urban courtyards with new apartment buildings, gardens, and children playing. "
+            f"Include sunlight, warmth, and a calm, inspiring atmosphere. "
+            f"The people should have realistic Slavic/European features, typical of modern Russian cities. "
+            f"The image must feel like a high-end real estate lifestyle photo — professional composition, clean lighting, DSLR quality."
         )    
 
         image_url = None
