@@ -72,7 +72,7 @@ def generate():
         response = client.chat.completions.create(
             model="gpt-4o",
             messages=[{"role": "user", "content": full_prompt}],
-            temperature=0.8
+            temperature=1
         )
 
         content = response.choices[0].message.content.strip()
@@ -113,7 +113,7 @@ def generate():
                 n=1,
                 size="1792x1024",
                 quality="hd",
-                style="natural""
+                style="natural"
             )
             image_url = image_response.data[0].url
         except Exception as e:
