@@ -99,13 +99,12 @@ def generate():
         )
             # 🔥 Генерация картинки по статье
         image_prompt = (
-            f"A photo-realistic, high-quality image inspired by the following real estate article in Russia:\n\n"
-            f"{article_summary}\n\n"
-            f"The image should metaphorically reflect the key idea — such as choosing between comfort, status, nature, or sea view. "
-            f"Depict modern Russian families in realistic urban courtyards with new apartment buildings, gardens, and children playing. "
-            f"Include sunlight, warmth, and a calm, inspiring atmosphere. "
-            f"The people should have realistic Slavic/European features, typical of modern Russian cities. "
-            f"The image must feel like a high-end real estate lifestyle photo — professional composition, clean lighting, DSLR quality."
+            f"f"A clean, photo-realistic image inspired by a real estate article in Russia."
+            f"The image should show a warm, modern residential area in a Russian city — with new apartment buildings, trees, and families outside. "
+            f"A peaceful, sunny day. Children playing, couples walking, and families enjoying time together in a courtyard. "
+            f"The scene should feel safe, optimistic, and modern, like a real estate advertisement for urban living. "
+            f"The mood is positive, welcoming, and filled with light."
+            
         )    
 
         image_url = None
