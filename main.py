@@ -90,7 +90,7 @@ def generate():
 
         # 🔥 Генерация картинки по заголовку
         image_prompt = (
-            f"A magical, atmospheric illustration in the style of Disney animated films, "
+            f"A magical, atmospheric illustration in the exact style of Disney animated concept art, "
             f"inspired by the meaning and content of the following article about real estate in Russia:\n\n"
             f"{article_text[:500]}\n\n"
             f"The illustration should metaphorically and visually convey the core idea of the article — "
@@ -98,11 +98,14 @@ def generate():
             f"investments, or economic trends.\n\n"
             f"The composition may include, depending on the article's theme, cities, neighborhoods, and characters "
             f"interacting with the environment: families, experts, builders, dreamers, or buyers. "
-            f"The color palette should be warm and inspiring. It's important to preserve the spirit of hope, dreams, "
-            f"and the future — as in classic Disney works — while keeping the illustration modern and thematically "
-            f"tied to real estate, without being a direct copy of photos or architectural plans.\n\n"
-            f"The visual style should be expressive, soft, and detail-oriented. Characters should appear kind and sincere, "
-            f"and scenes should be metaphorical. The illustration must be created based on the content of the article above."
+            f"The color palette should be warm, golden, and inspiring. Magical lighting is encouraged. "
+            f"The visual style should be expressive, painterly, soft, and highly detailed, "
+            f"like scenes from Disney movies such as Tangled, Encanto, or Frozen.\n\n"
+            f"The characters should have light skin tones and soft European facial features, "
+            f"resembling the classical characters from Disney fairy tales. Faces should appear friendly, open, "
+            f"and kind — evoking a sense of trust, joy, and emotional connection.\n\n"
+            f"The illustration must not resemble a photo or render, but should feel like a warm, storybook painting "
+            f"that emotionally resonates with the viewer."
         )    
 
         image_url = None
