@@ -135,5 +135,23 @@ def generate():
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
+@app.route("/delete_file", methods=["POST"])
+def delete_file():
+    try:
+        data = request.get_json()
+        file_id = data.get("file_id")
+        if not file_id:
+            return jsonify({"error": "file_id not provided"}), 400
+        
+        result = client.files.delete(file_id)
+        return jsonify({
+            "status": "deleted",
+            "file_id": file_id,
+            "result": result
+        })
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+            
+
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=10000)
